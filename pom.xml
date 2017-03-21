@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<groupId>aiss</groupId>
-	<artifactId>project_name</artifactId>
+	<artifactId>feelthetweet</artifactId>
 
 	<!-- Restlet repository -->
 	<repositories>
