@@ -9,15 +9,15 @@ function adjustMenu() {
     
     if (window.innerWidth > 767) {
         if (window.innerHeight > document.getElementById("contenido").scrollHeight + document.getElementById("footer").clientHeight) {
-            document.getElementById("row content").style.height = window.innerHeight - document.getElementById("footer").clientHeight + "px";
+            document.getElementById("row-content").style.height = window.innerHeight - document.getElementById("footer").clientHeight + "px";
         } else {
-            document.getElementById("row content").style.height = document.getElementById("contenido").scrollHeight + "px";
+            document.getElementById("row-content").style.height = document.getElementById("contenido").scrollHeight + "px";
         }
     } else {
-        if (window.innerHeight > document.getElementById("row content").scrollHeight + document.getElementById("footer").clientHeight) {
-            document.getElementById("row content").style.height = window.innerHeight - document.getElementById("footer").clientHeight + "px";
+        if (window.innerHeight > document.getElementById("row-content").scrollHeight + document.getElementById("footer").clientHeight) {
+            document.getElementById("row-content").style.height = window.innerHeight - document.getElementById("footer").clientHeight + "px";
         } else {
-            document.getElementById("row content").style.height = document.getElementById("row content").scrollHeight + "px";
+            document.getElementById("row-content").style.height = document.getElementById("row-content").scrollHeight + "px";
         }
     }
 

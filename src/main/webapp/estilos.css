@@ -45,4 +45,8 @@ a.btn-sm {
         width: 220px;
         height: 160px;
     }
+    
+    a.btn-sm {
+        font-size: 10px;
+    }
 }
