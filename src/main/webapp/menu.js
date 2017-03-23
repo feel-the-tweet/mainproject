@@ -1,4 +1,4 @@
-/* Ajusta la altura ("height") para que el menú se alargue hasta el final de la página */
+/* Adjusts menu's height to place the footer at the bottom of the page */
 function adjustMenu() {
     /* Debug code
     document.getElementById("logg").innerHTML = document.getElementById("contenido").scrollHeight + "px";
@@ -8,10 +8,10 @@ function adjustMenu() {
     */
     
     if (window.innerWidth > 767) {
-        if (window.innerHeight > document.getElementById("contenido").scrollHeight + document.getElementById("footer").clientHeight) {
+        if (window.innerHeight > document.getElementById("content").scrollHeight + document.getElementById("footer").clientHeight) {
             document.getElementById("row-content").style.height = window.innerHeight - document.getElementById("footer").clientHeight + "px";
         } else {
-            document.getElementById("row-content").style.height = document.getElementById("contenido").scrollHeight + "px";
+            document.getElementById("row-content").style.height = document.getElementById("content").scrollHeight + "px";
         }
     } else {
         if (window.innerHeight > document.getElementById("row-content").scrollHeight + document.getElementById("footer").clientHeight) {
@@ -24,7 +24,7 @@ function adjustMenu() {
 }
 
 
-/* Esta función se llama cada vez que se redimensiona la página */
+/* This function is called whenever the user resize the page */
 window.onresize = function (event) {
     adjustMenu();
 };
