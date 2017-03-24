@@ -42,13 +42,11 @@
 
            <div class="col-sm-9" id="content">
                <img id="logo" src="img/FeeltheTweet_Logo.png" alt="App logo"/>
-               <h3 class="text-center">Aplicación para la asignatura de AISS Grupo 3-2</h3>
+               <h3 class="text-center">AISS Mashup group 3-2</h3>
                <br>
-               <p class="text-center">FeelTheTweet es una herramienta que se ayuda del Big Data y 
-                   un estudio de emociones para evaluar los sentimientos de los usuarios de Twitter 
-                   sobre un determinado tema. Por ejemplo, podemos tener una idea general de lo que 
-                   se piensa en la red social sobre un determinado programa de televisión, un debate 
-                   o una marca con tan solo buscar palabras claves que reflejen un tema concreto. 
+               <p class="text-center">FeelTheTweet is a tool that with the aid of Big Data analyzes 
+               Twitter users' feelings about a topic. For example, it is posible to have a general idea
+               of what people think about a TV show, discussion or a commercial brand in the social network.
                </p>
                <br>
                
