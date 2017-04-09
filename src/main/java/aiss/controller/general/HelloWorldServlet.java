@@ -1,4 +1,4 @@
-package aiss;
+package aiss.controller.general;
 
 import java.io.IOException;
 import java.util.logging.Level;

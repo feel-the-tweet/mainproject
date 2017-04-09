@@ -135,6 +135,7 @@
 			<version>${google.client.version}</version>
 		</dependency>
 		
+<<<<<<< HEAD
 		<!-- Twitter Library for Java -->
 		<dependency>
 	        <groupId>org.twitter4j</groupId>
@@ -148,6 +149,14 @@
     		<version>[4.0,)</version>
 		</dependency>
 
+=======
+		<!-- Twitter4j Library -->
+		<dependency>
+           <groupId>org.twitter4j</groupId>
+           <artifactId>twitter4j-core</artifactId>
+           <version>[4.0,)</version>
+       </dependency>
+>>>>>>> 3cf2a7e1eee9a86e377065190fae250b4bb49b57
 
 	</dependencies>
 
