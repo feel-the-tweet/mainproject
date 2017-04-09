@@ -134,6 +134,19 @@
 			<artifactId>google-oauth-client-servlet</artifactId>
 			<version>${google.client.version}</version>
 		</dependency>
+		
+		<!-- Twitter Library for Java -->
+		<dependency>
+	        <groupId>org.twitter4j</groupId>
+	        <artifactId>twitter4j-core</artifactId>
+	        <version>[4.0,)</version>
+	    </dependency>
+	    <!-- Twitter Stream Library for Java -->
+	    <dependency>
+    		<groupId>org.twitter4j</groupId>
+    		<artifactId>twitter4j-stream</artifactId>
+    		<version>[4.0,)</version>
+		</dependency>
 
 
 	</dependencies>
