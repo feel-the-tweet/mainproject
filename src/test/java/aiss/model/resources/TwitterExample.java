@@ -28,10 +28,10 @@ public class TwitterExample {
 	public static void main(String[] args) {
 		//La autenticacion
 		ConfigurationBuilder cb = new ConfigurationBuilder();
-		cb.setDebugEnabled(true).setOAuthConsumerKey("JmOly0SsPxhcsj0FPjqU7ucLW")
-		.setOAuthConsumerSecret("809X1X90UTyhoCvV6GTe0ZlYsYjGRVtKjxvIW4nvDxPUI5p56l")
-		.setOAuthAccessToken("838794388750942209-dV0qn5hdllQ6jmUfKf12YHSzWY3ACQt")
-		.setOAuthAccessTokenSecret("sxYq9C24QyT3OKKSgMNJvNaUmWhA5n71hlt7Pi2t85Vy2");
+		cb.setDebugEnabled(true).setOAuthConsumerKey("")
+		.setOAuthConsumerSecret("")
+		.setOAuthAccessToken("")
+		.setOAuthAccessTokenSecret("");
 	
 		//Para escribir un tweet
 		
