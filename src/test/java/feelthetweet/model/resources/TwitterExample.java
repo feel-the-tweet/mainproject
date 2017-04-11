@@ -1,4 +1,4 @@
-package aiss.model.resources;
+package feelthetweet.model.resources;
 
 import java.util.List;
 
@@ -28,10 +28,10 @@ public class TwitterExample {
 	public static void main(String[] args) {
 		//La autenticacion
 		ConfigurationBuilder cb = new ConfigurationBuilder();
-		cb.setDebugEnabled(true).setOAuthConsumerKey("")
-		.setOAuthConsumerSecret("")
-		.setOAuthAccessToken("")
-		.setOAuthAccessTokenSecret("");
+		cb.setDebugEnabled(true).setOAuthConsumerKey("JmOly0SsPxhcsj0FPjqU7ucLW")
+		.setOAuthConsumerSecret("809X1X90UTyhoCvV6GTe0ZlYsYjGRVtKjxvIW4nvDxPUI5p56l")
+		.setOAuthAccessToken("838794388750942209-dV0qn5hdllQ6jmUfKf12YHSzWY3ACQt")
+		.setOAuthAccessTokenSecret("sxYq9C24QyT3OKKSgMNJvNaUmWhA5n71hlt7Pi2t85Vy2");
 	
 		//Para escribir un tweet
 		
@@ -40,7 +40,7 @@ public class TwitterExample {
 	    
 	    Status status;
 		try {
-			status = tw.updateStatus("Hola Twitter");
+			status = tw.updateStatus("Prueba 2");
 			 System.out.println("Successfully updated the status to [" + status.getText() + "].");
 		} catch (TwitterException e) {
 			e.printStackTrace();

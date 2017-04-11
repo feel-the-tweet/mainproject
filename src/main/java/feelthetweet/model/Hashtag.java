@@ -1,21 +1,30 @@
 
-package aiss.model;
+package feelthetweet.model;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Url {
+public class Hashtag {
 
-    private List<Url_> urls = null;
+    private String text;
+    private List<Integer> indices = null;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public List<Url_> getUrls() {
-        return urls;
+    public String getText() {
+        return text;
     }
 
-    public void setUrls(List<Url_> urls) {
-        this.urls = urls;
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public List<Integer> getIndices() {
+        return indices;
+    }
+
+    public void setIndices(List<Integer> indices) {
+        this.indices = indices;
     }
 
     public Map<String, Object> getAdditionalProperties() {

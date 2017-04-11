@@ -12,7 +12,7 @@ import com.google.api.client.auth.oauth2.AuthorizationCodeFlow;
 import com.google.api.client.extensions.servlet.auth.oauth2.AbstractAuthorizationCodeServlet;
 import com.google.api.client.http.GenericUrl;
 
-import aiss.utility.OAuthRegistry;
+import feelthetweet.utility.OAuthRegistry;
 
 /**
  * Generic OAuth controller that initiates an OAuth 2.0 authorization flow.

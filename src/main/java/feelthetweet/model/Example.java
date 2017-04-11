@@ -1,5 +1,5 @@
 
-package aiss.model;
+package feelthetweet.model;
 
 import java.util.HashMap;
 import java.util.List;

@@ -3,8 +3,10 @@
     <application>feelthetweet</application>
     <version>1</version>
     <threadsafe>true</threadsafe>
+    <sessions-enabled>true</sessions-enabled>
     
     <system-properties>
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
+        <property name="java.util.twitter4j.config.file" value="WEB-INF/twitter4j.properties"/>
     </system-properties>
 </appengine-web-app>
