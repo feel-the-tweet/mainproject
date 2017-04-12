@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-    <title>Sign in with Twitter example</title>
+    <title>Home</title>
 </head>
 <body>
 <tag:notloggedin>
@@ -12,12 +12,18 @@
 </tag:notloggedin>
 <tag:loggedin>
     <h1>Welcome ${twitter.screenName} (${twitter.id})</h1>
-	<a href="home.jsp">HOME</a>
-    <form action="/post" method="post">
-        <textarea cols="80" rows="2" name="text"></textarea>
-        <input type="submit" name="post" value="update"/>
+
+    <form action="usertimeline" method="get">
+        <textarea cols="80" rows="2" name="textusertl"></textarea>
+        <input type="submit" name="viewusertl" value="viewtl"/>
     </form>
-    <a href="/logout">logout</a>
+    <a href="mytimeline">View my Timeline</a>
+    <a href="trends">View popular Trends</a>
+    <form action="stream" method="get">
+        <textarea cols="20" rows="1" name="textstream"></textarea>
+        <input type="submit" name="viewrealtime" value="viewrealtime"/>
+    </form>
+    <a href="logout">logout</a>
 </tag:loggedin>
 
 	<a class="twitter-timeline" data-width="300" data-height="500" data-theme="dark" data-link-color="#19CF86" 

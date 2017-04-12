@@ -1,4 +1,4 @@
-package aiss.controller.oauth;
+package feelthetweet.controller.oauth;
 
 import java.io.IOException;
 import java.util.UUID;

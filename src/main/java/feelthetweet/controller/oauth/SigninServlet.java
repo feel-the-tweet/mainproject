@@ -24,10 +24,11 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-package feelthetweet.controller.general;
+package feelthetweet.controller.oauth;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
 import twitter4j.auth.RequestToken;
 
 import javax.servlet.ServletException;
@@ -36,19 +37,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class CallbackServlet extends HttpServlet {
-    private static final long serialVersionUID = 1657390011452788111L;
+public class SigninServlet extends HttpServlet {
+    private static final long serialVersionUID = -6205814293093350242L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Twitter twitter = (Twitter) request.getSession().getAttribute("twitter");
-        RequestToken requestToken = (RequestToken) request.getSession().getAttribute("requestToken");
-        String verifier = request.getParameter("oauth_verifier");
+        Twitter twitter = new TwitterFactory().getInstance();
+        request.getSession().setAttribute("twitter", twitter);
         try {
-            twitter.getOAuthAccessToken(requestToken, verifier);
-            request.getSession().removeAttribute("requestToken");
+            StringBuffer callbackURL = request.getRequestURL();
+            int index = callbackURL.lastIndexOf("/");
+            callbackURL.replace(index, callbackURL.length(), "").append("/callback");
+            RequestToken requestToken = twitter.getOAuthRequestToken(callbackURL.toString());
+            request.getSession().setAttribute("requestToken", requestToken);
+            response.sendRedirect(requestToken.getAuthenticationURL());
         } catch (TwitterException e) {
             throw new ServletException(e);
         }
-        response.sendRedirect(request.getContextPath() + "/");
     }
 }

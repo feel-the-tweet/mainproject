@@ -7,6 +7,6 @@
     
     <system-properties>
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
-        <property name="java.util.twitter4j.config.file" value="WEB-INF/twitter4j.properties"/>
+        <property name="twitter4j.properties" value="WEB-INF/twitter4j.properties"/>
     </system-properties>
 </appengine-web-app>
