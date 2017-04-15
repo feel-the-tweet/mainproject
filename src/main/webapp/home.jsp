@@ -23,6 +23,7 @@
         <textarea cols="20" rows="1" name="textstream"></textarea>
         <input type="submit" name="viewrealtime" value="viewrealtime"/>
     </form>
+    <a href="analyzesentiment">Analyze Sentiment</a>
     <a href="logout">logout</a>
 </tag:loggedin>
 

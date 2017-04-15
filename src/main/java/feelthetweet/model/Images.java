@@ -4,26 +4,17 @@ package feelthetweet.model;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Entities_ {
+public class Images {
 
-    private Url url;
-    private Description description;
+    private Png png;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public Url getUrl() {
-        return url;
+    public Png getPng() {
+        return png;
     }
 
-    public void setUrl(Url url) {
-        this.url = url;
-    }
-
-    public Description getDescription() {
-        return description;
-    }
-
-    public void setDescription(Description description) {
-        this.description = description;
+    public void setPng(Png png) {
+        this.png = png;
     }
 
     public Map<String, Object> getAdditionalProperties() {

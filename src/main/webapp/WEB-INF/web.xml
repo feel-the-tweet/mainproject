@@ -82,4 +82,14 @@
     <servlet-name>StreamingServlet</servlet-name>
     <url-pattern>/stream</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AnalyzeSentimentServlet</display-name>
+    <servlet-name>AnalyzeSentimentServlet</servlet-name>
+    <servlet-class>feelthetweet.controller.general.AnalyzeSentimentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AnalyzeSentimentServlet</servlet-name>
+    <url-pattern>/analyzesentiment</url-pattern>
+  </servlet-mapping>
 </web-app>
