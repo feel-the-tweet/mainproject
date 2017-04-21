@@ -4,7 +4,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>war</packaging>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 
 	<groupId>aiss</groupId>
 	<artifactId>feelthetweet</artifactId>
@@ -141,12 +141,6 @@
 	        <artifactId>twitter4j-core</artifactId>
 	        <version>[4.0,)</version>
 	    </dependency>
-	    <!-- Twitter Stream Library for Java -->
-	    <dependency>
-    		<groupId>org.twitter4j</groupId>
-    		<artifactId>twitter4j-stream</artifactId>
-    		<version>[4.0,)</version>
-		</dependency>
 		
 		<dependency>
        		<groupId>javax.servlet.jsp</groupId>
@@ -179,7 +173,7 @@
 					<!-- Comment in the below snippet to bind to all IPs instead of just 
 						localhost -->
 					<!--  <address>0.0.0.0</address> --> 
-					<port>8088</port>
+					<port>8090</port>
 					<!-- Comment in the below snippet to enable local debugging with a remote 
 						debugger like those included with Eclipse or IntelliJ -->
 					<jvmFlags> <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag> 
@@ -254,17 +248,6 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-				
-	<!--			<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.3</version>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </plugin>-->
-				
 			</plugins>
 		</pluginManagement>
 	</build>

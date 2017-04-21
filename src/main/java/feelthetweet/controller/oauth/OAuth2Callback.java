@@ -9,13 +9,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import feelthetweet.utility.OAuthRegistry;
+
 import com.google.api.client.auth.oauth2.AuthorizationCodeFlow;
 import com.google.api.client.auth.oauth2.AuthorizationCodeResponseUrl;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.servlet.auth.oauth2.AbstractAuthorizationCodeCallbackServlet;
 import com.google.api.client.http.GenericUrl;
-
-import feelthetweet.utility.OAuthRegistry;
 
 /**
  * Servlet implementation class OAuth2Callback
@@ -28,9 +28,12 @@ public class OAuth2Callback extends AbstractAuthorizationCodeCallbackServlet {
 	protected void onSuccess(HttpServletRequest req, HttpServletResponse resp, Credential credential)
 			throws ServletException, IOException {
 		String provider=getInitParameter("provider");
-		req.getSession().setAttribute(provider+"-token", credential.getAccessToken());
-		OAuthRegistry.onAuthorizationSuccess(getInitParameter("onSuccess"), provider, credential, req, resp);				
-		
+		if(provider==null || "".equals(provider)){
+			log.warning("No provider found in OAuth Callbak servlet for request: "+req.getRequestURI());
+		}else{
+				req.getSession().setAttribute(provider+"-token", credential.getAccessToken());
+				OAuthRegistry.onAuthorizationSuccess(getInitParameter("onSuccess"), provider, credential, req, resp);
+		}						
 	}
 
 	@Override

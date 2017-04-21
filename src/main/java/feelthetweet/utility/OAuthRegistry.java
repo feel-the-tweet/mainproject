@@ -15,8 +15,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.api.client.auth.oauth2.AuthorizationCodeFlow;
 import com.google.api.client.auth.oauth2.BearerToken;
+import com.google.api.client.auth.oauth2.ClientParametersAuthentication;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.http.BasicAuthentication;
+//import com.google.api.client.http.BasicAuthentication;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -37,7 +38,7 @@ public class OAuthRegistry {
 	// File from which the OAuth data for each provider will be loaded
 	protected static final String OAUTH_RESOURCE="WEB-INF/OAuthConfig.json";
 	// Map were the configurations are loaded:
-	protected static Map<String,OAuthServiceConfiguration> serviceConfigurations=new HashMap<String,OAuthServiceConfiguration>();
+	protected static Map<String,OAuthServiceConfiguration> serviceConfigurations=null;
 	
 	static { // We load the configuration of the OAuth providers when the class is loaded by the server:
 		loadConfig();
@@ -57,7 +58,7 @@ public class OAuthRegistry {
 		AuthorizationCodeFlow.Builder flowBuilder = new AuthorizationCodeFlow.Builder(
 				BearerToken.authorizationHeaderAccessMethod(), new NetHttpTransport(), new JacksonFactory(),
 				new GenericUrl(tokenURL),
-				new BasicAuthentication(clientID, clientSecret),
+				new ClientParametersAuthentication(clientID, clientSecret),
 				clientID, authorizationFormURL).setDataStoreFactory(
 						MemoryDataStoreFactory.getDefaultInstance());
 
@@ -77,6 +78,8 @@ public class OAuthRegistry {
 	 */
 	public static AuthorizationCodeFlow initializeFlow(String service) throws IOException{
 		log.finest("Creating authorization flow for "+service);
+		if(serviceConfigurations==null)
+			loadConfig();
 		OAuthServiceConfiguration config=serviceConfigurations.get(service);
 		if(config==null)
 			throw new IOException("There is no OAuth configuration for the service '"+config+"'");
@@ -100,6 +103,7 @@ public class OAuthRegistry {
 	 */
 	private static void loadConfig()
 	{
+		serviceConfigurations=new HashMap<>();
 		ObjectMapper om=new ObjectMapper();		
 		try {						
 			

@@ -2,18 +2,13 @@ package feelthetweet.model.resources;
 
 import java.util.List;
 
-import twitter4j.FilterQuery;
-import twitter4j.StallWarning;
+
 import twitter4j.Status;
-import twitter4j.StatusDeletionNotice;
-import twitter4j.StatusListener;
 import twitter4j.Trend;
 import twitter4j.Trends;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.TwitterStream;
-import twitter4j.TwitterStreamFactory;
 import twitter4j.api.TrendsResources;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -88,38 +83,6 @@ public class TwitterExample {
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		} 
-
-		//Para Streaming
-//	    TwitterStream ts = new TwitterStreamFactory(cb.build()).getInstance();
-//	    
-//	    StatusListener listener = new StatusListener(){
-//	        public void onStatus(Status status) {
-//	            System.out.println(status.getUser().getName() + " : " + status.getText());
-//	        	System.out.println(status.getCreatedAt());
-//	        }
-//	        public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {}
-//	        public void onTrackLimitationNotice(int numberOfLimitedStatuses) {}
-//	        public void onException(Exception ex) {
-//	            ex.printStackTrace();
-//	        }
-//			@Override
-//			public void onScrubGeo(long arg0, long arg1) {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//			@Override
-//			public void onStallWarning(StallWarning arg0) {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//	    };
-//	    
-//	    FilterQuery fq = new FilterQuery();
-//	    String keywords[] = {"#ThorRagnarok"};
-//	    fq.track(keywords);
-//	    
-//	    ts.addListener(listener);
-//	    ts.filter(fq);
 					
 	}
 

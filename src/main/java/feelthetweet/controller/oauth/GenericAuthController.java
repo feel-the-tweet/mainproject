@@ -2,6 +2,7 @@ package feelthetweet.controller.oauth;
 
 import java.io.IOException;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +27,7 @@ import feelthetweet.utility.OAuthRegistry;
 public class GenericAuthController extends AbstractAuthorizationCodeServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+	private static Logger log=Logger.getLogger(GenericAuthController.class.getName());
 	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
@@ -34,8 +35,12 @@ public class GenericAuthController extends AbstractAuthorizationCodeServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String provider=getInitParameter("provider");
-		request.getSession().setAttribute(provider+"-token", getCredential().getAccessToken());
-		OAuthRegistry.onAuthorizationSuccess(getInitParameter("onSuccess"), provider, getCredential(), request, response);											
+		if(provider==null || "".equals(provider)){
+			log.warning("No provider found in OAuth Callbak servlet for request: "+request.getRequestURI());
+		}else{
+			request.getSession().setAttribute(provider+"-token", getCredential().getAccessToken());
+			OAuthRegistry.onAuthorizationSuccess(getInitParameter("onSuccess"), provider, getCredential(), request, response);
+		}
 	}
 
 	@Override
