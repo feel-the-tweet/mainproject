@@ -3,6 +3,7 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <!-- Twitter Servlets -->
   <servlet>
     <servlet-name>signin</servlet-name>
     <servlet-class>feelthetweet.controller.oauth.SigninServlet</servlet-class>
@@ -72,63 +73,79 @@
     <servlet-name>TrendsServlet</servlet-name>
     <url-pattern>/trends</url-pattern>
   </servlet-mapping>
-  
-  <servlet>        
+  <!-- Google Drive Servlets -->
+  <servlet>
     <servlet-name>GoogleDriveListingServlet</servlet-name>
-    <servlet-class>feelthetweet.controller.general.DriveFileListController</servlet-class>    
+    <servlet-class>feelthetweet.controller.general.DriveFileListController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GoogleDriveListingServlet</servlet-name>
     <url-pattern>/googleDriveListing</url-pattern>
   </servlet-mapping>
-  
-  <servlet>        
+  <servlet>
     <servlet-name>DriveFileDelete</servlet-name>
-    <servlet-class>feelthetweet.controller.general.DriveFileDelete</servlet-class>    
+    <servlet-class>feelthetweet.controller.general.DriveFileDelete</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DriveFileDelete</servlet-name>
     <url-pattern>/GoogleDriveFileDelete</url-pattern>
   </servlet-mapping>
-  
-  <servlet>        
+  <servlet>
     <servlet-name>DriveFileUpdate</servlet-name>
-    <servlet-class>feelthetweet.controller.general.DriveFileUpdate</servlet-class>    
+    <servlet-class>feelthetweet.controller.general.DriveFileUpdate</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DriveFileUpdate</servlet-name>
     <url-pattern>/GoogleDriveFileUpdate</url-pattern>
   </servlet-mapping>
-  
-  <servlet>        
+  <servlet>
     <servlet-name>GoogleDriveFileNew</servlet-name>
-  	<servlet-class>feelthetweet.controller.general.DriveFileNew</servlet-class>    
+    <servlet-class>feelthetweet.controller.general.DriveFileNew</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GoogleDriveFileNew</servlet-name>
-     <url-pattern>/GoogleDriveFileNew</url-pattern>
+    <url-pattern>/GoogleDriveFileNew</url-pattern>
   </servlet-mapping>
-  
+  <!-- Aylien Text Analysis Servlets -->
   <servlet>
     <description></description>
-    <display-name>AnalyzeSentimentServlet</display-name>
-    <servlet-name>AnalyzeSentimentServlet</servlet-name>
-    <servlet-class>feelthetweet.controller.general.AnalyzeSentimentServlet</servlet-class>
+    <display-name>AnalyzeTweetSentimentServlet</display-name>
+    <servlet-name>AnalyzeTweetSentimentServlet</servlet-name>
+    <servlet-class>feelthetweet.controller.general.AnalyzeTweetSentimentServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AnalyzeSentimentServlet</servlet-name>
-    <url-pattern>/analyzesentiment</url-pattern>
+    <servlet-name>AnalyzeTweetSentimentServlet</servlet-name>
+    <url-pattern>/analyzeTweetSentiment</url-pattern>
   </servlet-mapping>
-  
-  <!--    Google Drive OAuth Servlets -->    
+    <servlet>
+    <description></description>
+    <display-name>AnalyzeTextSentimentServlet</display-name>
+    <servlet-name>AnalyzeTextSentimentServlet</servlet-name>
+    <servlet-class>feelthetweet.controller.general.AnalyzeTextSentimentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AnalyzeTextSentimentServlet</servlet-name>
+    <url-pattern>/analyzeTextSentiment</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ExtractHashtagsServlet</display-name>
+    <servlet-name>ExtractHashtagsServlet</servlet-name>
+    <servlet-class>feelthetweet.controller.general.ExtractHashtagsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExtractHashtagsServlet</servlet-name>
+    <url-pattern>/extractHashtagsUrl</url-pattern>
+  </servlet-mapping>
+  <!-- Google Drive Oauth Servlets -->
   <servlet>
     <description></description>
     <display-name>GoogleDriveAuthController</display-name>
     <servlet-name>GoogleDriveAuthController</servlet-name>
     <servlet-class>feelthetweet.controller.oauth.GenericAuthController</servlet-class>
     <init-param>
-    	<param-name>provider</param-name>
-    	<param-value>GoogleDrive</param-value>
+      <param-name>provider</param-name>
+      <param-value>GoogleDrive</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
@@ -141,16 +158,17 @@
     <servlet-name>GoogleDriveOAuth2Callback</servlet-name>
     <servlet-class>feelthetweet.controller.oauth.OAuth2Callback</servlet-class>
     <init-param>
-    	<param-name>provider</param-name>
-    	<param-value>GoogleDrive</param-value>
+      <param-name>provider</param-name>
+      <param-value>GoogleDrive</param-value>
     </init-param>
     <init-param>
-    	<param-name>onSuccess</param-name>
-    	<param-value>redirect:/googleDriveListing</param-value>
+      <param-name>onSuccess</param-name>
+      <param-value>redirect:/googleDriveListing</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>GoogleDriveOAuth2Callback</servlet-name>
     <url-pattern>/oauth2callback/GoogleDrive</url-pattern>
   </servlet-mapping>
+
 </web-app>

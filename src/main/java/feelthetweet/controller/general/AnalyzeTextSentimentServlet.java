@@ -6,21 +6,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.cloud.language.spi.v1.LanguageServiceClient;
-import com.google.cloud.language.v1.Document;
-import com.google.cloud.language.v1.Sentiment;
-import com.google.cloud.language.v1.Document.Type;
+import com.aylien.textapi.TextAPIClient;
+import com.aylien.textapi.TextAPIException;
+import com.aylien.textapi.parameters.SentimentParams;
+import com.aylien.textapi.responses.Sentiment;
 
 /**
- * Servlet implementation class AnalyzeSentimentServlet
+ * Servlet implementation class AnalyzeTextSentimentServlet
  */
-public class AnalyzeSentimentServlet extends HttpServlet {
+public class AnalyzeTextSentimentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AnalyzeSentimentServlet() {
+    public AnalyzeTextSentimentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,21 +29,21 @@ public class AnalyzeSentimentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Instantiates a client
-	    LanguageServiceClient language = null;
+		
+		TextAPIClient client = new TextAPIClient("e4c91a1c", "7af649d5a8502da656033172bf37ca7a");
+		SentimentParams.Builder builder = SentimentParams.newBuilder();
+		String text = request.getParameter("textanalyze");
+		builder.setText(text);
+		builder.setMode("document");
+		Sentiment sentiment;
+		
 		try {
-			language = LanguageServiceClient.create();
-			// The text to analyze
-		    String text = "Hello, world!";
-		    Document doc = Document.newBuilder()
-		            .setContent(text).setType(Type.PLAIN_TEXT).build();
-
-		    // Detects the sentiment of the text
-		    Sentiment sentiment = language.analyzeSentiment(doc).getDocumentSentiment();
-
-		    System.out.printf("Text: %s%n", text);
-		    System.out.printf("Sentiment: %s, %s%n", sentiment.getScore(), sentiment.getMagnitude());
-		} catch (IOException e) {
+			
+			sentiment = client.sentiment(builder.build());
+			System.out.println(sentiment);
+			
+		} catch (TextAPIException e) {
+			
 			e.printStackTrace();
 		}
 	}

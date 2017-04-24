@@ -19,11 +19,22 @@
     </form>
     <a href="mytimeline">View my Timeline</a>
     <a href="trends">View popular Trends</a>
-    <form action="stream" method="get">
-        <textarea cols="20" rows="1" name="textstream"></textarea>
-        <input type="submit" name="viewrealtime" value="viewrealtime"/>
+    
+    <form action="analyzeTweetSentiment" method="get">
+        <textarea cols="60" rows="4" name="tweetanalyze"></textarea>
+        <input type="submit" name="viewtweetanalysis" value="viewtweetanalysis"/>
     </form>
-    <a href="analyzesentiment">Analyze Sentiment</a>
+    
+    <form action="analyzeTextSentiment" method="get">
+        <textarea cols="80" rows="10" name="textanalyze"></textarea>
+        <input type="submit" name="viewtextanalysis" value="viewtextanalysis"/>
+    </form>
+    
+    <form action="extractHashtagsUrl" method="get">
+        <textarea cols="60" rows="2" name="urltoanalyze"></textarea>
+        <input type="submit" name="viewextractedhashtags" value="viewextractedhashtags"/>
+    </form>
+    
     <a href="logout">logout</a>
 </tag:loggedin>
 
