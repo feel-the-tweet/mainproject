@@ -73,7 +73,15 @@
     <servlet-name>TrendsServlet</servlet-name>
     <url-pattern>/trends</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
+    <servlet-name>TwitterSearchServlet</servlet-name>
+    <servlet-class>feelthetweet.controller.general.TwitterSearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TwitterSearchServlet</servlet-name>
+    <url-pattern>/twitterSearch</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <description></description>
     <display-name>StatusDelete</display-name>
     <servlet-name>StatusDelete</servlet-name>

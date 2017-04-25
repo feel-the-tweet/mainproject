@@ -44,9 +44,12 @@ public class PostServlet extends HttpServlet {
         Twitter twitter = (Twitter)request.getSession().getAttribute("twitter");
         try {
             twitter.updateStatus(text);
+            request.setAttribute("message", "Tweet posted succesfully!");
+    		request.getRequestDispatcher("myTimeline").forward(request,response);
         } catch (TwitterException e) {
             throw new ServletException(e);
         }
-        response.sendRedirect(request.getContextPath()+ "/");
+        //response.sendRedirect(request.getContextPath()+ "/");
+        
     }
 }

@@ -1,6 +1,9 @@
 package feelthetweet.controller.general;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,11 +41,16 @@ public class ExtractHashtagsServlet extends HttpServlet {
 		builder.setUrl(url);
 		
 		HashTags hashTags;
+		String[] lista;
 		try {
 			hashTags = client.hashtags(builder.build());
-			for (String hashTag: hashTags.getHashtags()) {
+			lista = hashTags.getHashtags();
+			for (String hashTag: lista) {
 			    System.out.println(hashTag);
 			}
+			
+			request.setAttribute("trends", lista);
+			request.getRequestDispatcher("/trends.jsp").forward(request,response);
 		} catch (TextAPIException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

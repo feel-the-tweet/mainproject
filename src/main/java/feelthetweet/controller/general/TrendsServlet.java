@@ -1,6 +1,9 @@
 package feelthetweet.controller.general;
 
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,8 +39,10 @@ public class TrendsServlet extends HttpServlet {
 		try {
 			//Esto es un localizador de 32bits que se llama WOEID - (Spain)
 			t = tr.getPlaceTrends(23424950);
-			System.out.println("Showing the most popular trends in "+t.getLocation().getName());
+			String place = t.getLocation().getName();
+			System.out.println("Showing the most popular trends in "+place);
 			Trend[] ta = t.getTrends();
+			Set<Trend> trends = new HashSet<>();
 //			for (int i = 0; i< ta.length;i++) {
 //		    	System.out.println(ta[i].getName());
 //		    }
@@ -46,9 +51,13 @@ public class TrendsServlet extends HttpServlet {
 	        for (Trend trend : ta) {
 	            if (count < 10) {
 	                System.out.println(trend.getName());
+	                trends.add(trend);
 	                count++;
 	            }
 	        }
+	        request.setAttribute("place", place);
+	        request.setAttribute("trends", trends);
+	        request.getRequestDispatcher("/trends.jsp").forward(request,response);
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}

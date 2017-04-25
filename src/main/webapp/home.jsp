@@ -36,6 +36,11 @@
         <input type="submit" name="viewextractedhashtags" value="viewextractedhashtags"/>
     </form>
     
+     <form action="twitterSearch" method="get">
+        <textarea cols="50" rows="2" name="query"></textarea>
+        <input type="submit" name="search" value="searchtweets"/>
+    </form>
+    
     <a href="logout">logout</a>
 </tag:loggedin>
 
