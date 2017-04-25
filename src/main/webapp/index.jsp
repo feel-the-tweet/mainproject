@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-    <title>Sign in with Twitter example</title>
+    <title>Index</title>
 </head>
 <body>
 <tag:notloggedin>
@@ -14,11 +14,17 @@
 <tag:loggedin>
     <h1>Welcome ${twitter.screenName} (${twitter.id})</h1>
 	<a href="home.jsp">HOME</a>
+	
+	<h2>Post a tweet</h2>
     <form action="/post" method="post">
         <textarea cols="80" rows="2" name="text"></textarea>
         <input type="submit" name="post" value="update"/>
     </form>
-    <a href="/googleDriveListing">Listado de ficheros de Google Drive</a>
+
+    <h3><a href="/googleDriveListing">See your files</a></h3>
+    
+    <h3><a href="/myTimeline">See your timeline</a></h3>
+    
     <a href="/logout">logout</a>
 </tag:loggedin>
 

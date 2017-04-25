@@ -51,7 +51,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>UserTimelineServlet</servlet-name>
-    <url-pattern>/usertimeline</url-pattern>
+    <url-pattern>/userTimeline</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -61,7 +61,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>MyTimelineServlet</servlet-name>
-    <url-pattern>/mytimeline</url-pattern>
+    <url-pattern>/myTimeline</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -72,6 +72,16 @@
   <servlet-mapping>
     <servlet-name>TrendsServlet</servlet-name>
     <url-pattern>/trends</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>StatusDelete</display-name>
+    <servlet-name>StatusDelete</servlet-name>
+    <servlet-class>feelthetweet.controller.general.StatusDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatusDelete</servlet-name>
+    <url-pattern>/statusDelete</url-pattern>
   </servlet-mapping>
   <!-- Google Drive Servlets -->
   <servlet>

@@ -41,6 +41,8 @@ public class AnalyzeTextSentimentServlet extends HttpServlet {
 			
 			sentiment = client.sentiment(builder.build());
 			System.out.println(sentiment);
+			request.setAttribute("sentiment", sentiment);
+			request.getRequestDispatcher("/sentimentresult.jsp").forward(request,response);
 			
 		} catch (TextAPIException e) {
 			

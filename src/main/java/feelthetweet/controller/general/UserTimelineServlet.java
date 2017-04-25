@@ -31,15 +31,19 @@ public class UserTimelineServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Twitter twitter = (Twitter)request.getSession().getAttribute("twitter");
-		String text = request.getParameter("textusertl");
+		String user = request.getParameter("textusertl");
+		
 	    List<Status> timeline;
 		try {
-			System.out.println("Showing "+text+"'s timeline.");
-			timeline = twitter.getUserTimeline(text);
+			System.out.println("Showing "+ user +" timeline.");
+			timeline = twitter.getUserTimeline(user);
 			for (Status status : timeline) {
 		        System.out.println(status.getUser().getName() + ":" +
 		                           status.getText());
 		    }
+			request.setAttribute("timeline", timeline);
+			request.setAttribute("usertl", user);
+			request.getRequestDispatcher("/timeline.jsp").forward(request,response);
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}

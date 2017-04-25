@@ -1,7 +1,17 @@
-<%@include file="includes/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<h1>Files in your Drive</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<title>Feelthetweet - My Files</title>
+</head>
+<body>
+	<h2><a href="home.jsp">HOME</a></h2>
+	<h1>Files in your Drive</h1>
 
 	<div class="container">
 	
@@ -33,4 +43,5 @@
 		<a href="/EditFile.jsp" class="button">Create new plain text file</a>
 	</div>
 
-<%@include file="includes/footer.jsp"%>
+</body>
+</html>

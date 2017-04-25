@@ -7,17 +7,18 @@
     <title>Home</title>
 </head>
 <body>
+	<a href="index.jsp">INDEX</a>
 <tag:notloggedin>
     <a href="signin"><img src="./img/Sign-in-with-Twitter-darker.png"/></a>
 </tag:notloggedin>
 <tag:loggedin>
     <h1>Welcome ${twitter.screenName} (${twitter.id})</h1>
 
-    <form action="usertimeline" method="get">
+    <form action="userTimeline" method="get">
         <textarea cols="80" rows="2" name="textusertl"></textarea>
         <input type="submit" name="viewusertl" value="viewtl"/>
     </form>
-    <a href="mytimeline">View my Timeline</a>
+    <a href="myTimeline">View my Timeline</a>
     <a href="trends">View popular Trends</a>
     
     <form action="analyzeTweetSentiment" method="get">

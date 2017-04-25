@@ -1,28 +1,26 @@
 package feelthetweet.controller.general;
 
 import java.io.IOException;
+import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.aylien.textapi.TextAPIClient;
-import com.aylien.textapi.TextAPIException;
-import com.aylien.textapi.parameters.SentimentParams;
-import com.aylien.textapi.responses.Sentiment;
-
-
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
 
 /**
- * Servlet implementation class AnalyzeSentimentServlet
+ * Servlet implementation class StatusDelete
  */
-public class AnalyzeTweetSentimentServlet extends HttpServlet {
+public class StatusDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private static final Logger log = Logger.getLogger(StatusDelete.class.getName());
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AnalyzeTweetSentimentServlet() {
+    public StatusDelete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,26 +29,26 @@ public class AnalyzeTweetSentimentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id=request.getParameter("id");
+		Twitter twitter = (Twitter)request.getSession().getAttribute("twitter");
 		
-		TextAPIClient client = new TextAPIClient("e4c91a1c", "7af649d5a8502da656033172bf37ca7a");
-		SentimentParams.Builder builder = SentimentParams.newBuilder();
-		String tweet = request.getParameter("tweetanalyze");
-		builder.setText(tweet);
-		builder.setMode("tweet");
-		Sentiment sentiment;
-
-		try {
-
-			sentiment = client.sentiment(builder.build());
-			System.out.println(sentiment);
-			request.setAttribute("sentiment", sentiment);
-			request.getRequestDispatcher("/sentimentresult.jsp").forward(request,response);
-			
-		} catch (TextAPIException e) {
-			
-			e.printStackTrace();
+		if(id!=null && !"".equals(id)){
+			try {
+				twitter.destroyStatus(Long.parseLong(id));
+				log.info("Tweet with id '"+id+"' deleted!");
+				request.setAttribute("message", "Tweet with id '"+id+"' succesfully deleted!");
+				request.getRequestDispatcher("/myTimeline").forward(request,response);
+				
+			} catch (TwitterException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			log.warning("Invalid id for delete!");
+			request.getRequestDispatcher("index.jsp").forward(request,response);
 		}
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

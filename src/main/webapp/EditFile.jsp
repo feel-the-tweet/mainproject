@@ -1,4 +1,15 @@
-<%@include file="includes/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<title>Feelthetweet - Edit/New File</title>
+</head>
+<body>
 
 <% String controller = "GoogleDriveFileNew"; %>
 	
@@ -28,5 +39,5 @@
 			</div>
 		</form>
 	</div>
-
-<%@include file="includes/footer.jsp"%>
+</body>
+</html>

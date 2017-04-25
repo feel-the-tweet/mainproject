@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Javascript for the menu -->
-    <script src="menu.js" type="text/javascript"></script>
+    <script src="includes/menu.js" type="text/javascript"></script>
 
     <title>Feel the Tweet</title>
 </head>

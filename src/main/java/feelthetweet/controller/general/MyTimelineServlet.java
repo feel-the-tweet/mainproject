@@ -32,14 +32,19 @@ public class MyTimelineServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Twitter twitter = (Twitter)request.getSession().getAttribute("twitter");
+
 	    List<Status> timeline;
 		try {
-			System.out.println("Showing "+twitter.getScreenName()+" timeline.");
+
+			System.out.println("Showing your timeline.");
 			timeline = twitter.getHomeTimeline();
+			
 			for (Status status : timeline) {
 		        System.out.println(status.getUser().getName() + ":" +
 		                           status.getText());
 		    }
+			request.setAttribute("timeline", timeline);
+			request.getRequestDispatcher("/mytimeline.jsp").forward(request,response);
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
