@@ -37,11 +37,13 @@
     </form>
     
      <form action="twitterSearch" method="get">
-        <textarea cols="50" rows="2" name="query"></textarea>
+        <textarea cols="50" rows="2" name="querytext"></textarea>
         <input type="submit" name="search" value="searchtweets"/>
     </form>
     
     <a href="logout">logout</a>
+    
+   
 </tag:loggedin>
 
 	<a class="twitter-timeline" data-width="300" data-height="500" data-theme="dark" data-link-color="#19CF86" 

@@ -33,9 +33,9 @@ public class TwitterSearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Twitter twitter = (Twitter)request.getSession().getAttribute("twitter");
-		String queryaux = request.getParameter("query");
 		
-		query.setQuery(queryaux);
+		String queryaux = request.getParameter("querytext");
+		Query query = new Query(queryaux);
 		
 		List<Status> queryResult;
 		try {

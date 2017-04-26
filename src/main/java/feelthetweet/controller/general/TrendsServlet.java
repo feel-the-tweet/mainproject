@@ -51,6 +51,7 @@ public class TrendsServlet extends HttpServlet {
 	        for (Trend trend : ta) {
 	            if (count < 10) {
 	                System.out.println(trend.getName());
+	                
 	                trends.add(trend);
 	                count++;
 	            }

@@ -42,7 +42,9 @@ public class MyTimelineServlet extends HttpServlet {
 			for (Status status : timeline) {
 		        System.out.println(status.getUser().getName() + ":" +
 		                           status.getText());
+
 		    }
+
 			request.setAttribute("timeline", timeline);
 			request.setAttribute("message", request.getAttribute("message"));
 			request.getRequestDispatcher("/mytimeline.jsp").forward(request,response);

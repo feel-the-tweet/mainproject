@@ -30,9 +30,19 @@
 				<td><c:out value="${status.user.name}"/></td>
 				<td><c:out value="${status.text}"/></td>
 				<td><c:out value="${status.createdAt}"/></td>
-				<td>
+				<c:choose>
+    				<c:when test="${status.user.screenName == twitter.screenName}">
+       					 <td>
+				 		 <a href="statusDelete?id=${status.id}"><img src="./img/delete.png" width="30px"></a>
+						</td>
+    				</c:when>    
+    				<c:otherwise>
+        				<td></td>
+    				</c:otherwise>
+				</c:choose>
+				<!--<td>
 				  <a href="statusDelete?id=${status.id}"><img src="./img/delete.png" width="30px"></a>
-				</td>
+				</td>-->
 				<td>
 					<a href="analyzeTweetSentiment?tweetanalyze=${status.text}"><img src="./img/edit.png" width="30px"></a>
 				</td>

@@ -41,16 +41,17 @@ public class ExtractHashtagsServlet extends HttpServlet {
 		builder.setUrl(url);
 		
 		HashTags hashTags;
-		String[] lista;
+		Set<String> trends = new HashSet<>();
 		try {
 			hashTags = client.hashtags(builder.build());
-			lista = hashTags.getHashtags();
-			for (String hashTag: lista) {
+
+			for (String hashTag: hashTags.getHashtags()) {
 			    System.out.println(hashTag);
+			    trends.add(hashTag);
 			}
 			
-			request.setAttribute("trends", lista);
-			request.getRequestDispatcher("/trends.jsp").forward(request,response);
+			request.setAttribute("trends", trends);
+			request.getRequestDispatcher("/extractedhashtags.jsp").forward(request,response);
 		} catch (TextAPIException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

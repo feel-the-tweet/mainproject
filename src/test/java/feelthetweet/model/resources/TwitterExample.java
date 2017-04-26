@@ -2,13 +2,14 @@ package feelthetweet.model.resources;
 
 import java.util.List;
 
-
+import twitter4j.Query;
 import twitter4j.Status;
 import twitter4j.Trend;
 import twitter4j.Trends;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.api.SearchResource;
 import twitter4j.api.TrendsResources;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -19,7 +20,7 @@ public class TwitterExample {
 	 * (del paquete twitter4j). Para que haya funcionado en Maven se ha añadido dos dependencias
 	 * nuevas. 
 	 */
-
+	
 	public static void main(String[] args) {
 		//La autenticacion
 		ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -45,45 +46,61 @@ public class TwitterExample {
 		
 	    //Para consultar la timeline de un usuario en especial
 		
-	    List<Status> statuses;
+//	    List<Status> statuses;
+//		try {
+//			statuses = tw.getUserTimeline("@LuisRus10");
+//			for (Status statuss : statuses) {
+//		        System.out.println(statuss.getUser().getName() + ":" +
+//		                           statuss.getText());
+//		    }
+//			System.out.println("Showing home timeline.");
+//		} catch (TwitterException e) {
+//			e.printStackTrace();
+//		}
+//	    
+//	    
+//	    
+//		
+//		//Para consultar trending topics
+//		
+//	    TrendsResources tr = tw.trends();
+//	    Trends t;
+//		try {
+//			//Esto es un localizador de 32bits que se llama WOEID - (Spain)
+//			t = tr.getPlaceTrends(23424950);
+//			
+//			Trend[] ta = t.getTrends();
+////			for (int i = 0; i< ta.length;i++) {
+////		    	System.out.println(ta[i].getName());
+////		    }
+//			//Para mostrar solo top10 mas populares
+//			int count = 0;
+//	        for (Trend trend : ta) {
+//	            if (count < 10) {
+//	                System.out.println(trend.getName());
+//	                count++;
+//	            }
+//	        }
+//		} catch (TwitterException e) {
+//			e.printStackTrace();
+//		} 
+			
+		//Para buscar tweets
+		String queryaux = "Food";
+		Query query = new Query(queryaux);
+		
+		List<Status> queryResult;
 		try {
-			statuses = tw.getUserTimeline("@LuisRus10");
-			for (Status statuss : statuses) {
-		        System.out.println(statuss.getUser().getName() + ":" +
-		                           statuss.getText());
+			System.out.println("Showing "+ queryaux +" search results");
+			queryResult = tw.search(query).getTweets();
+			for (Status status : queryResult) {
+		        System.out.println(status.getUser().getName() + ":" +
+		                           status.getText());
 		    }
-			System.out.println("Showing home timeline.");
+			
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
-	    
-	    
-	    
-		
-		//Para consultar trending topics
-		
-	    TrendsResources tr = tw.trends();
-	    Trends t;
-		try {
-			//Esto es un localizador de 32bits que se llama WOEID - (Spain)
-			t = tr.getPlaceTrends(23424950);
-			
-			Trend[] ta = t.getTrends();
-//			for (int i = 0; i< ta.length;i++) {
-//		    	System.out.println(ta[i].getName());
-//		    }
-			//Para mostrar solo top10 mas populares
-			int count = 0;
-	        for (Trend trend : ta) {
-	            if (count < 10) {
-	                System.out.println(trend.getName());
-	                count++;
-	            }
-	        }
-		} catch (TwitterException e) {
-			e.printStackTrace();
-		} 
-					
 	}
 
 }
