@@ -14,7 +14,8 @@ import feelthetweet.model.resource.GoogleDriveResource;
 
 public class DriveFileListController extends HttpServlet {
 	private static final Logger log = Logger.getLogger(DriveFileListController.class.getName());
-
+	private static final long serialVersionUID = 1L;
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String accessToken=(String)req.getSession().getAttribute("GoogleDrive-token");
 		if(accessToken!=null && !"".equals(accessToken)){

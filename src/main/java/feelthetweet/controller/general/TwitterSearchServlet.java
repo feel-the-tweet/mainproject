@@ -18,7 +18,7 @@ import twitter4j.TwitterException;
  */
 public class TwitterSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Query query;
+
        
     /**
      * @see HttpServlet#HttpServlet()

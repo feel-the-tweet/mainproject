@@ -5,13 +5,12 @@ import java.util.logging.Logger;
 
 import org.restlet.data.ChallengeResponse;
 import org.restlet.data.ChallengeScheme;
-import org.restlet.data.Form;
-import org.restlet.data.Header;
+
 import org.restlet.data.MediaType;
 import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.ClientResource;
 import org.restlet.resource.ResourceException;
-import org.restlet.util.Series;
+
 
 import feelthetweet.model.google.drive.FileItem;
 import feelthetweet.model.google.drive.Files;
@@ -36,7 +35,7 @@ public class GoogleDriveResource {
 		Files files = null;
 		try {
 			cr = new ClientResource(uri + "?access_token=" + access_token);
-			String result = cr.get(String.class);
+			//String result = cr.get(String.class);
 			files = cr.get(Files.class);
 
 		} catch (ResourceException re) {
@@ -115,13 +114,6 @@ public class GoogleDriveResource {
 		String contentURL=item.getDownloadUrl();
 		try{
 			ClientResource cr = new ClientResource(contentURL);			
-			/*Map<String, Object> reqAttribs = cr.getRequestAttributes(); 
-	        Series<Header> headers = (Series<Header>)reqAttribs.get("org.restlet.http.headers"); 
-	        if (headers == null) { 
-	            headers = new Series<Header>(Header.class); 
-	            reqAttribs.put("org.restlet.http.headers", headers); 
-	        } 
-	        headers.add(new Header("Authorization:", "Bearer "+access_token));*/
 			ChallengeResponse chr = new ChallengeResponse(
 					ChallengeScheme.HTTP_OAUTH_BEARER);
 			chr.setRawValue(access_token);

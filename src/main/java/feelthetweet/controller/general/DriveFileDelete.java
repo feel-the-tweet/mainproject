@@ -9,11 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import feelthetweet.model.resource.GoogleDriveResource;
-import feelthetweet.model.google.drive.Files;
+
 
 public class DriveFileDelete extends HttpServlet {
 	private static final Logger log = Logger.getLogger(DriveFileDelete.class.getName());
-
+	private static final long serialVersionUID = 1L;
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String id=req.getParameter("id");
 		if(id!=null && !"".equals(id)){
