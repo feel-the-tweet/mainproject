@@ -42,6 +42,8 @@ public class StatusDelete extends HttpServlet {
 			} catch (TwitterException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				request.setAttribute("message", "Error");
+				request.getRequestDispatcher("/error.jsp").forward(request,response);
 			}
 		}else{
 			log.warning("Invalid id for delete!");

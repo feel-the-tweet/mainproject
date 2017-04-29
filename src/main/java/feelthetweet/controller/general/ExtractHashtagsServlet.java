@@ -55,6 +55,8 @@ public class ExtractHashtagsServlet extends HttpServlet {
 		} catch (TextAPIException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			request.setAttribute("message", "Error");
+			request.getRequestDispatcher("/error.jsp").forward(request,response);
 		}
 		
 	}

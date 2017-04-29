@@ -13,17 +13,21 @@
 </tag:notloggedin>
 <tag:loggedin>
     <h1>Welcome ${twitter.screenName} (${twitter.id})</h1>
-	<a href="home.jsp">HOME</a>
+	<h2><a href="funcionalidades.jsp">FUNCIONALIDADES</a></h2>
 	
 	<h2>Post a tweet</h2>
     <form action="/post" method="post">
         <textarea cols="80" rows="2" name="text"></textarea>
-        <input type="submit" name="post" value="update"/>
+        <input type="submit" name="post" value="Post"/>
     </form>
 
     <h3><a href="/googleDriveListing">See your files</a></h3>
     
     <h3><a href="/myTimeline">See your timeline</a></h3>
+    
+    <h3><a href="about.jsp">About us</a></h3>
+    
+    <h3><a href="docs/index.html">Feelthetweet API Documentation</a></h3>
     
     <a href="/logout">logout</a>
 </tag:loggedin>

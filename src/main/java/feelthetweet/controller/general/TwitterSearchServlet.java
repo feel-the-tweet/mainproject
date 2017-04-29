@@ -49,6 +49,8 @@ public class TwitterSearchServlet extends HttpServlet {
 			request.getRequestDispatcher("/searchresults.jsp").forward(request,response);
 		} catch (TwitterException e) {
 			e.printStackTrace();
+			request.setAttribute("message", "Error");
+			request.getRequestDispatcher("/error.jsp").forward(request,response);
 		}
 	}
 

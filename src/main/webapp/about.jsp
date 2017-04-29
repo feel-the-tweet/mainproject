@@ -33,7 +33,9 @@
     <title>About us</title>
 </head>
 <body onload="adjustMenu()">
-
+	<h2><a href="funcionalidades.jsp">FUNCIONALIDADES</a></h2>
+	<h2><a href="index.jsp">INDEX</a></h2>
+	
 <div class="container-fluid">
     <div class="row content" id="row-content">
         <div class="col-sm-3 sidenav" id="menu">

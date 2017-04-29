@@ -57,9 +57,9 @@ paths:
     post:
       tags:
       - Texts
-      summary: Creates a new text
+      summary: Creates a new text and includes its sentiment analysis
       operationId: addText
-      description: Creates a new text
+      description: Creates a new text and includes its sentiment analysis
       consumes:
       - application/json
       produces:
@@ -70,7 +70,7 @@ paths:
         description: Text to create
         required: true
         schema:
-          $ref: '#/definitions/Text'
+          $ref: '#/definitions/TextReduced'
       responses:
         201:
           description: Text created
@@ -93,15 +93,15 @@ paths:
       parameters:
       - in: body
         name: text
-        description: text to update
+        description: Text to update
         required: true
         schema:
-          $ref: '#/definitions/Text'
+          $ref: '#/definitions/TextReducedUpdate'
       responses:
         201:
           description: Text updated
         404:
-          description: Text not found
+          description: Text to update not found
   /texts/{id}:
     get:
       tags:
@@ -166,3 +166,24 @@ definitions:
       createdAt:
         type: string
         example: 20-04-2017
+  TextReduced:
+    type: object
+    properties:        
+      title:
+        type: string
+        example: Text Title
+      content:
+        type: string
+        example: I really liked the food but the staff was horrible
+  TextReducedUpdate:
+    type: object
+    properties:        
+      id:
+        type: string
+        example: 1
+      title:
+        type: string
+        example: Text Title
+      content:
+        type: string
+        example: I really liked the food but the staff was horrible 

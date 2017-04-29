@@ -7,13 +7,13 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<title>Feelthetweet - Twitter Search Results</title>
+<title>Twitter Search Results</title>
 </head>
 <body>
 
 	<h1>Twitter Search Results</h1>
 	
-	<h2><a href="home.jsp">HOME</a></h2>
+	<h2><a href="funcionalidades.jsp">FUNCIONALIDADES</a></h2>
 	<h2><a href="index.jsp">INDEX</a></h2>
 	
 	<div class="searchresults">
@@ -34,10 +34,10 @@
 				<td><c:out value="${status.text}"/></td>
 				<td><c:out value="${status.createdAt}"/></td>
 				<td>
-					<a href="analyzeTweetSentiment?tweetanalyze=${status.text}"><img src="./img/edit.png" width="30px"></a>
+					<a href="analyzeTweetSentiment?tweetanalyze=${status.text}"><img src="./img/analysis.png" width="30px"></a>
 				</td>
 				<td>
-				  <a href="https://twitter.com/${status.user.screenName}"><img src="./img/delete.png" width="30px"></a>
+				  <a href="https://twitter.com/${status.user.screenName}"><img src="./img/view.png" width="30px"></a>
 				</td>
 				</tr>
 			</c:forEach>			

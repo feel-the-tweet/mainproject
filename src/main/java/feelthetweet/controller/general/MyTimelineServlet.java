@@ -50,6 +50,8 @@ public class MyTimelineServlet extends HttpServlet {
 			request.getRequestDispatcher("/mytimeline.jsp").forward(request,response);
 		} catch (TwitterException e) {
 			e.printStackTrace();
+			request.setAttribute("message", "Error");
+			request.getRequestDispatcher("/error.jsp").forward(request,response);
 		}
 	}
 

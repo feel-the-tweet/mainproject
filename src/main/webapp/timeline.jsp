@@ -7,12 +7,14 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<title>Feelthetweet - Timeline</title>
+<title>Timeline</title>
 </head>
 <body>
-	<a href="home.jsp">HOME</a>
+	
 	<h1>Showing ${requestScope.usertl}'s timeline</h1>
-
+	<h2><a href="funcionalidades.jsp">FUNCIONALIDADES</a></h2>
+	<h2><a href="index.jsp">INDEX</a></h2>
+	
 	<div class="container">
 	
 		<!-- <p class="message">${message}</p> -->
@@ -23,6 +25,7 @@
 				<th>Text</th>
 				<th>Created at</th>
 				<th>Analyze Sentiment</th>
+				<th></th>
 				<th>View user</th>
 			</tr>
 			<c:forEach items="${requestScope.timeline}" var="status">
@@ -31,10 +34,11 @@
 				<td><c:out value="${status.text}"/></td>
 				<td><c:out value="${status.createdAt}"/></td>
 				<td>
-					<a href="analyzeTweetSentiment?tweetanalyze=${status.text}"><img src="./img/edit.png" width="30px"></a>
+					<a href="analyzeTweetSentiment?tweetanalyze=${status.text}"><img src="./img/analysis.png" width="30px"></a>
 				</td>
+				<td></td>
 				<td>
-				  <a href="https://twitter.com/${status.user.screenName}"><img src="./img/delete.png" width="30px"></a>
+				  <a href="https://twitter.com/${status.user.screenName}"><img src="./img/view.png" width="30px"></a>
 				</td>
 				</tr>
 			</c:forEach>			

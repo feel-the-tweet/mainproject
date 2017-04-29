@@ -7,10 +7,12 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<title>Feelthetweet - Edit/New File</title>
+<title>Edit/New File</title>
 </head>
 <body>
-
+	<h2><a href="funcionalidades.jsp">FUNCIONALIDADES</a></h2>
+	<h2><a href="index.jsp">INDEX</a></h2>
+	
 <% String controller = "GoogleDriveFileNew"; %>
 	
 	<c:if test="${not empty file}">

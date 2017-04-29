@@ -7,12 +7,13 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<title>Feelthetweet - Trends</title>
+<title>Trends</title>
 </head>
 <body>
-	<a href="home.jsp">HOME</a>
+	
 	<h1>Showing the most popular trends in ${requestScope.place}</h1>
-
+	<h2><a href="funcionalidades.jsp">FUNCIONALIDADES</a></h2>
+	<h2><a href="index.jsp">INDEX</a></h2>
 	<div class="trends">
 	
 		<!-- <p class="message">${message}</p> -->

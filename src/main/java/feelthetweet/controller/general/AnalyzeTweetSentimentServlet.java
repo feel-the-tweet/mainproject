@@ -49,6 +49,8 @@ public class AnalyzeTweetSentimentServlet extends HttpServlet {
 		} catch (TextAPIException e) {
 			
 			e.printStackTrace();
+			request.setAttribute("message", "Error");
+			request.getRequestDispatcher("/error.jsp").forward(request,response);
 		}
 	}
 	/**

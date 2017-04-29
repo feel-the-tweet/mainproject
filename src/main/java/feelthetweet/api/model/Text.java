@@ -13,7 +13,7 @@ public class Text {
 	private String content;
 	String sentiment;
 	private String createdAt;
-	private TextAPIClient client = new TextAPIClient("", "");
+	private TextAPIClient client = new TextAPIClient("e4c91a1c", "7af649d5a8502da656033172bf37ca7a");
 	
 	public Text() {
 		this.createdAt = new Date().toString();
