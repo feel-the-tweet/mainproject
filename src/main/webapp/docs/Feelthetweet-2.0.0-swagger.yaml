@@ -1,0 +1,168 @@
+swagger: '2.0'
+
+################################################################################
+#                              API Information                                 #
+################################################################################
+info:
+  title: Feel the tweet API
+  description: |
+    Feelthetweet Text Analysis API Documentation.
+    
+    With this API you can get the sentiment of a text.
+
+    [Mashup GitHub Repository](https://github.com/feel-the-tweet/mainproject)  |
+    [Aylien Text Analysis](http://aylien.com/)
+    
+  version: "2.0.0"
+  contact:
+    email: feelthetweet@protonmail.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+#API URL
+host: feelthetweet.appspot.com
+basePath: /api
+
+schemes:
+- https
+- http
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+################################################################################
+#                                           Paths                              #
+################################################################################
+paths:
+  /texts:
+    get:
+      tags:
+      - Texts
+      summary: Searches all texts
+      operationId: getAllTexts
+      description: Gets all the texts and their sentiment analysis
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Texts available
+          schema:
+            $ref: '#/definitions/Text'
+        404:
+          description: Collection of texts is null
+    post:
+      tags:
+      - Texts
+      summary: Creates a new text
+      operationId: addText
+      description: Creates a new text
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: text
+        description: Text to create
+        required: true
+        schema:
+          $ref: '#/definitions/Text'
+      responses:
+        201:
+          description: Text created
+          schema:
+            $ref: '#/definitions/Text'
+        400:
+          description: Invalid input, object invalid
+        500:
+          description: The text already exists
+    put:
+      tags:
+      - Texts
+      summary: Updates a text
+      operationId: updateText
+      description: Updates a text
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: text
+        description: text to update
+        required: true
+        schema:
+          $ref: '#/definitions/Text'
+      responses:
+        201:
+          description: Text updated
+        404:
+          description: Text not found
+  /texts/{id}:
+    get:
+      tags:
+      - Texts
+      summary: Searches the text with the id provided
+      operationId: getText
+      description: Gets the text with the id provided
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: Id of the text to search
+        required: true
+        type: string
+      responses:
+        200:
+          description: Text with the id
+          schema:
+            $ref: '#/definitions/Text'
+        404:
+          description: Text not found
+    delete:
+      tags:
+      - Texts
+      summary: Deletes the text with the id provided
+      operationId: deleteText
+      description: Deletes the text with the id provided
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: Id of the text to delete
+        required: true
+        type: string
+      responses:
+        200:
+          description: Text deleted
+        404:
+          description: Text not found
+
+################################################################################
+#                                 Definitions                                  #
+################################################################################
+definitions:
+  Text:
+    type: object
+    properties:        
+      id:
+        type: string
+        example: 1
+      title:
+        type: string
+        example: Text Title
+      content:
+        type: string
+        example: I really liked the food but the staff was horrible
+      sentiment:
+        type: string
+        example: negative 0.9996340274810791 subjective 1.0
+      createdAt:
+        type: string
+        example: 20-04-2017
