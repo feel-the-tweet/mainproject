@@ -39,7 +39,7 @@
     
      <form action="twitterSearch" method="get">
         <textarea cols="50" rows="2" name="querytext"></textarea>
-        <input type="submit" name="search" value="Search tweets"/> Searches tweets that contains the input
+        <input type="submit" name="search" value="Search tweets"/> Searches tweets that contain the input
     </form>
     
     <a href="logout">logout</a>

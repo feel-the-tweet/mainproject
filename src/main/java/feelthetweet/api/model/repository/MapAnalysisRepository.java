@@ -32,35 +32,38 @@ public class MapAnalysisRepository implements AnalysisRepository{
 		
 		textMap = new HashMap<String,Text>();
 		
-		// Create songs
 		Text text1=new Text();
-		text1.setTitle("Rolling in the Deep");
-		text1.setContent("Adele");
-		//text1.setSentiment();
+		text1.setTitle("Pet");
+		text1.setContent("I would like to have a pet");
 		addText(text1);
 		
 		Text text2=new Text();
-		text2.setTitle("One");
-		text2.setContent("U2");
-		//text2.setSentiment();
+		text2.setTitle("Machine Learning");
+		text2.setContent("Machines are about to get a lot smarter and machine learning will transform our lives. "
+				+ "So says a report by the Royal Society in the UK, a fellowship of many of the world's most eminent scientists."
+				+ " Machine learning is a form of artificial intelligence that's already being used to tag people in photos, to interpret voice "
+				+ "commands and to help "
+				+ "internet retailers to make recommendations.Manuela Saragosa hears about "
+				+ "a new technology that is set to revolutionise computing, developed by a "
+				+ "UK company called Graphcore. Manuela talks to Graphcore's chief executive Nigel Toon, who is taking on the"
+				+ " AI giants.And Manuela hears how we are 'bleeding data' all the time. Dr Joanna Bryson from the University of "
+				+ "Bath and professor Amanda Chessell, an IBM distinguished engineer and master inventor, explain how our data is "
+				+ "being used.");
 		addText(text2);
 		
 		Text text3=new Text();
 		text3.setTitle("Hotel");
 		text3.setContent("I liked the hotel, the food was really good");
-		//text3.setSentiment();
 		addText(text3);
 		
 		Text text4=new Text();
-		text4.setTitle("Smell Like Teen Spirit");
-		text4.setContent("Nirvana");
-		//text4.setSentiment();
+		text4.setTitle("Marks");
+		text4.setContent("I hope this API and its documentation help us improve our marks");
 		addText(text4);
 		
 		Text text5=new Text();
-		text5.setTitle("Someone that I used to know");
-		text5.setContent("Gotye");
-		//text5.setSentiment();
+		text5.setTitle("Group");
+		text5.setContent("My group is the best");
 		addText(text5);
 	}
 
@@ -88,16 +91,6 @@ public class MapAnalysisRepository implements AnalysisRepository{
 		Text text = textMap.get(t.getId());
 		text.setTitle(t.getTitle());
 		text.setContent(t.getContent());
-		/*try {
-			text.setTitle(t.getTitle());
-			text.setContent(t.getContent());
-			//text.setSentiment();
-			
-		} catch (TextAPIException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		
 		
 	}
 

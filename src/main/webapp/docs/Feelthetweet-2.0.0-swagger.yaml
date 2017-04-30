@@ -78,8 +78,6 @@ paths:
             $ref: '#/definitions/Text'
         400:
           description: Invalid input, object invalid
-        500:
-          description: The text already exists
     put:
       tags:
       - Texts
@@ -98,7 +96,7 @@ paths:
         schema:
           $ref: '#/definitions/TextReducedUpdate'
       responses:
-        201:
+        204:
           description: Text updated
         404:
           description: Text to update not found
@@ -139,7 +137,7 @@ paths:
         required: true
         type: string
       responses:
-        200:
+        204:
           description: Text deleted
         404:
           description: Text not found

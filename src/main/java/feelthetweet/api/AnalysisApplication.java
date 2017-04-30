@@ -19,7 +19,6 @@ public class AnalysisApplication extends Application {
 	public AnalysisApplication() throws TextAPIException {
 
 		singletons.add(TextResource.getInstance());
-		//singletons.add(SongResource.getInstance());
 	}
 
 	@Override

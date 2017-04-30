@@ -72,9 +72,6 @@ public class TextResource {
 	public Response addText(@Context UriInfo uriInfo, Text text) {
 		if (text.getTitle() == null || "".equals(text.getTitle()))
 			throw new BadRequestException("The name of the text must not be null");
-		if(getAllTexts().contains(text)){
-			throw new WriterException("The text already exists");
-		}
 		
 		repository.addText(text);
 

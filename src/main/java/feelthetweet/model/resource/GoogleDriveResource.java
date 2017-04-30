@@ -35,7 +35,6 @@ public class GoogleDriveResource {
 		Files files = null;
 		try {
 			cr = new ClientResource(uri + "?access_token=" + access_token);
-			//String result = cr.get(String.class);
 			files = cr.get(Files.class);
 
 		} catch (ResourceException re) {
