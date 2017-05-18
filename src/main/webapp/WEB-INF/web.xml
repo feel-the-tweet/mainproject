@@ -73,6 +73,18 @@
     <servlet-name>TrendsServlet</servlet-name>
     <url-pattern>/trends</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>DraftDisplayed</display-name>
+    <servlet-name>DraftName</servlet-name>
+    <servlet-class>feelthetweet.draft.Draft</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DraftName</servlet-name>
+    <url-pattern>/draft</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <servlet-name>TwitterSearchServlet</servlet-name>
     <servlet-class>feelthetweet.controller.general.TwitterSearchServlet</servlet-class>

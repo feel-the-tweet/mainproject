@@ -1,0 +1,67 @@
+.logo {
+    /*width: 275px;
+    height: 200px;*/
+    width:275px;
+    height:275px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.mycontent {
+    margin-top: 100px;
+    text-align: center;
+
+}
+
+.trends {
+    margin-top: 100px;
+    background-color: rgba(255,255,255,0.7);
+    color: black;
+}
+
+.trends p {
+    margin-top: 50%;
+}
+
+.tweetsend {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tweetsend textarea{
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.background-wrap {
+    position: fixed;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+#video-bg-elem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+}
+.mdl-layout__content {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.2);
+}
