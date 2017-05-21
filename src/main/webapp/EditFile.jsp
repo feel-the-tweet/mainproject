@@ -41,7 +41,7 @@
         </nav>
         </div>
         </header>
-        <!-- <div class="mdl-layout__drawer">
+        <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">FeeltheTweet</span>
         <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="index.jsp">Home</a>
@@ -49,7 +49,7 @@
         <a class="mdl-navigation__link" href="/googleDriveListing">Google Drive files</a>
         <a class="mdl-navigation__link" href="functionality.jsp">Functionality</a>
         </nav>
-        </div> -->
+        </div>
         <main class="mdl-layout__content">
         <div class="page-content">
             <div class="mdl-grid">

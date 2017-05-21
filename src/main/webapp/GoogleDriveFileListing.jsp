@@ -56,6 +56,7 @@
              <h3>Files in your Drive</h3>
              </div>
                 <div class="mdl-cell mdl-cell--12-col centered-w">
+                <p class="message">${message}</p>
    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp centered-c" id="files">
   <thead>
     <tr>

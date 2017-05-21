@@ -1,4 +1,4 @@
-package feelthetweet.model.aylien;
+package feelthetweet.bot.aylien;
 
 import java.util.ArrayList;
 import java.util.List;

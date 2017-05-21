@@ -76,10 +76,10 @@
         <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">FeeltheTweet</span>
         <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Home</a>
-        <a class="mdl-navigation__link" href="">My timeline</a>
-        <a class="mdl-navigation__link" href="">Analyze text</a>
-        <a class="mdl-navigation__link" href="">Google Drive files</a>
+        <a class="mdl-navigation__link" href="index.jsp">Home</a>
+        <a class="mdl-navigation__link" href="/myTimeline">My timeline</a>
+        <a class="mdl-navigation__link" href="/googleDriveListing">Google Drive files</a>
+        <a class="mdl-navigation__link" href="functionality.jsp">Functionality</a>
         </nav>
         </div>
         <main class="mdl-layout__content">

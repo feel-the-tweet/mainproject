@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import feelthetweet.model.aylien.SentimentTool;
+import feelthetweet.bot.aylien.SentimentTool;
 import twitter4j.Trends;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
