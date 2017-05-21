@@ -44,7 +44,6 @@
         <span class="mdl-layout-title">FeeltheTweet</span>
         <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="/index.jsp">Home</a>
-        <a class="mdl-navigation__link" href="">My timeline</a>
         <a class="mdl-navigation__link" href="/googleDriveListing">Google Drive files</a>
         <a class="mdl-navigation__link" href="functionality.jsp">Functionality</a>
         </nav>
@@ -70,7 +69,16 @@
       <td class="mdl-data-table__cell--non-numeric"><c:out value="${status.user.name}"/></td>
       <td class="mdl-data-table__cell--non-numeric"><c:out value="${status.text}"/></td>
       <!--<td class="mdl-data-table__cell--non-numeric"><c:out value="${status.createdAt}"/></td>-->
-      <td class="mdl-data-table__cell--non-numeric"><button class="mdl-button"><a href="statusDelete?id=${status.id}"><i class="material-icons">delete</i></a></button></td>
+      
+      <c:choose>
+    	 <c:when test="${status.user.screenName == twitter.screenName}">
+     		 <td class="mdl-data-table__cell--non-numeric"><button class="mdl-button"><a href="statusDelete?id=${status.id}"><i class="material-icons">delete</i></a></button></td>
+         </c:when>    
+     <c:otherwise>
+        	 <td></td>
+     </c:otherwise>
+	 </c:choose>
+	 
       <td class="mdl-data-table__cell--non-numeric"><button class="mdl-button"><a href="analyzeTweetSentiment?tweetanalyze=${status.text}"><i class="material-icons">thumbs_up_down</i></a></button></td>
     </tr>
     </c:forEach>
