@@ -76,14 +76,24 @@
   
    <servlet>
     <description></description>
-    <display-name>DraftDisplayed</display-name>
-    <servlet-name>DraftName</servlet-name>
-    <servlet-class>feelthetweet.draft.Draft</servlet-class>
+    <display-name>Bot</display-name>
+    <servlet-name>Bot-Servlet</servlet-name>
+    <servlet-class>feelthetweet.bot.Bot</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DraftName</servlet-name>
-    <url-pattern>/draft</url-pattern>
+    <servlet-name>Bot-Servlet</servlet-name>
+    <url-pattern>/bot</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>NewSentimentFile</servlet-name>
+    <servlet-class>feelthetweet.controller.general.NewSentimentFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewSentimentFile</servlet-name>
+    <url-pattern>/NewSentimentFile</url-pattern>
+  </servlet-mapping>
+  
   
   <servlet>
     <servlet-name>TwitterSearchServlet</servlet-name>

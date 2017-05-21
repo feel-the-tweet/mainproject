@@ -16,6 +16,8 @@ import com.aylien.textapi.TextAPIException;
 import feelthetweet.api.model.Text;
 import feelthetweet.model.resource.TextResource;
 
+/* Pruebas automatizadas de los recursos de la API*/
+
 public class TextResourceTest {
 	static Text text1,text2,text3;
 	static TextResource tr = new TextResource();

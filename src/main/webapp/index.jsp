@@ -66,8 +66,8 @@
     <div class="mdl-logo">&copy; AISS 2016-2017</div>
     <ul class="mdl-mini-footer__link-list">
     <li><a href="/docs/index.html">API Documentation</a></li>
-    <li><a href="#">Help</a></li>
-    <li><a href="#">About us</a></li>
+    <li><a href="help.html">Help</a></li>
+    <li><a href="about.html">About us</a></li>
     </ul>
     </div>
     </footer>
@@ -97,7 +97,7 @@
     <nav class="mdl-navigation">
     <a class="mdl-navigation__link" href="/myTimeline">My timeline</a>
     <a class="mdl-navigation__link" href="/googleDriveListing">My Drive files</a>
-    <a class="mdl-navigation__link" href="funcionalidades.jsp">Functionality</a>
+    <a class="mdl-navigation__link" href="functionality.jsp">Functionality</a>
     </nav>
     </div>
     <main class="mdl-layout__content">
@@ -123,8 +123,8 @@
     <div class="mdl-logo">&copy; AISS 2016-2017</div>
     <ul class="mdl-mini-footer__link-list">
     <li><a href="/docs/index.html">API Documentation</a></li>
-    <li><a href="#">Help</a></li>
-    <li><a href="#">About us</a></li>
+    <li><a href="help.html">Help</a></li>
+    <li><a href="about.html">About us</a></li>
     </ul>
     </div>
     </footer>

@@ -10,12 +10,18 @@ import feelthetweet.model.google.drive.FileItem;
 import feelthetweet.model.google.drive.Files;
 import feelthetweet.model.resource.GoogleDriveResource;
 
+/* Pruebas automatizadas recursos Google Drive MASHUP*/
+
 public class GoogleDriveResourceTest {
 	static FileItem file1,file2,file3,file4;
 	static Files files;
 	static String id1,id2,id3,id4;
-	static String access_token;
-	static GoogleDriveResource gdr = new GoogleDriveResource("");
+	
+	/* Se necesita un access token para poder autentificar las llamadas, para obtenerlo debe acceder a la lista de archivos
+	 * y hacer click en "See drive token". Cópielo en la variable access_token.
+	 */
+	static String access_token = "ya29.GltQBH9KjwQTzuuEPz3hpJ9nsrkUNZIQzsWeKTq3aQ6QUR0TB-6VxJ5cwS9IpYNSajjS_hc3mZKGgDI-ao8ujBE8oJLXq1MCuRDl_XJER5vSE7BCFwevC-ZGGtnk";
+	static GoogleDriveResource gdr = new GoogleDriveResource(access_token);
 	
 	@BeforeClass
 	public static void setUp() throws Exception {
@@ -41,7 +47,7 @@ public class GoogleDriveResourceTest {
 		gdr.deleteFile(id3);
 	}
 	
-	/*@Test
+	@Test
 	public void testGetFiles() {
 		files = gdr.getFiles();
 		
@@ -54,13 +60,12 @@ public class GoogleDriveResourceTest {
 			System.out.println("File " + i++ + " : " + file.getTitle() + " (ID=" + file.getId() + ")");
 		}
 		
-	}*/
+	}
 	
 	@Test
 	public void testGetFile() {
 		FileItem f = gdr.getFile(id1);
 
-		//assertEquals("The id of the files do not match", f.getId(), file1.getId());
 		assertEquals("The name of the files do not match", f.getTitle(), file1.getTitle());
 		
 		// Show result
@@ -91,38 +96,11 @@ public class GoogleDriveResourceTest {
 	}
 	
 	@Test
-	public void testUpdateFile() {
-		String newTitle = "Nuevo Titulo updateFile";
-		file2.setTitle(newTitle);
-		boolean success = gdr.updateFile(file2);
-
-		assertTrue("Error when updating the file", success);
-		assertNotEquals("The name of the files are the same", newTitle, gdr.getFile(file2.getId()).getTitle());
-		
-		// Show result
-		if(success){
-			System.out.println("File new name: " +  gdr.getFile(file2.getId()).getTitle());
-		}
-
-	}
-
-	@Test
-	public void testFileContent() {
-
-		String content = gdr.getFileContent(file3);
-		assertNotNull("File content is null", content);
-		if(content!=null){
-			System.out.println("Contenido del archivo: "+content);
-		}
-	}
-	
-	@Test
-	public void updateFileContent() {
-		String origcontent = gdr.getFileContent(file4);
-		boolean success = gdr.updateFileContent(id4, "Nuevo contenido");
+	public void testUpdateFileContent() {
+		boolean success = gdr.updateFileContent(id3, "Nuevo contenido");
 		
 		assertTrue("Error when updating the file content", success);
-		assertNotEquals("Files content is the same", origcontent,gdr.getFileContent(file4));
+
 		if(success){
 			System.out.println("File content updated");
 		}

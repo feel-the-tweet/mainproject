@@ -19,6 +19,8 @@ import twitter4j.TwitterFactory;
 import twitter4j.api.TrendsResources;
 import twitter4j.conf.ConfigurationBuilder;
 
+/* Pruebas automatizadas recursos Twitter MASHUP*/
+
 public class TwitterTest {
 	
 	static ConfigurationBuilder cb = new ConfigurationBuilder();
@@ -29,10 +31,10 @@ public class TwitterTest {
 	@BeforeClass
 	public static void setUp() throws Exception {
 		
-		cb.setDebugEnabled(true).setOAuthConsumerKey("")
-		.setOAuthConsumerSecret("")
-		.setOAuthAccessToken("")
-		.setOAuthAccessTokenSecret("");
+		cb.setDebugEnabled(true).setOAuthConsumerKey("JmOly0SsPxhcsj0FPjqU7ucLW")
+		.setOAuthConsumerSecret("809X1X90UTyhoCvV6GTe0ZlYsYjGRVtKjxvIW4nvDxPUI5p56l")
+		.setOAuthAccessToken("838794388750942209-Zrj5wNI9vaTOYsl8m4Kp7ma8YCYBXeR")
+		.setOAuthAccessTokenSecret("BHJdWUjVbWMdyIxRvUXrMxpwXifk9yiXIEOjnMWgKZblY");
 		
 		twitter = new TwitterFactory(cb.build());
 		tw = twitter.getInstance();

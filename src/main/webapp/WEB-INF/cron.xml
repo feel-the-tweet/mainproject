@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cronentries>
   <cron>
-    <url>/draft</url>
+    <url>/bot</url>
     <target>beta</target>
-    <description>Tweet trends</description>
-    <schedule>every 1 hours</schedule>
+    <description>Tweet sentiment analysis of worldwide trends</description>
+    <schedule>every 2 hours</schedule>
   </cron>
 </cronentries>

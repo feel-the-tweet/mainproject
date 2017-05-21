@@ -36,12 +36,14 @@ public class AnalyzeTextSentimentServlet extends HttpServlet {
 		builder.setText(text);
 		builder.setMode("document");
 		Sentiment sentiment;
-		
+
 		try {
 			
 			sentiment = client.sentiment(builder.build());
+			String content = text+"\n"+sentiment.toString();
 			System.out.println(sentiment);
 			request.setAttribute("sentiment", sentiment);
+			request.setAttribute("content", content);
 			request.getRequestDispatcher("/sentimentresult.jsp").forward(request,response);
 			
 		} catch (TextAPIException e) {

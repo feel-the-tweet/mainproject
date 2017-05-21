@@ -42,8 +42,10 @@ public class AnalyzeTweetSentimentServlet extends HttpServlet {
 		try {
 
 			sentiment = client.sentiment(builder.build());
+			String content = tweet+"\n"+sentiment.toString();
 			System.out.println(sentiment);
 			request.setAttribute("sentiment", sentiment);
+			request.setAttribute("content", content);
 			request.getRequestDispatcher("/sentimentresult.jsp").forward(request,response);
 			
 		} catch (TextAPIException e) {

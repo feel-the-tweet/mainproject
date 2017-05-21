@@ -1,7 +1,6 @@
-package feelthetweet.draft;
+package feelthetweet.bot;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -9,22 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import feelthetweet.controller.general.StatusDelete;
-import feelthetweet.model.aylien.Sentiments;
-import twitter4j.Location;
-import twitter4j.ResponseList;
-import twitter4j.Status;
-import twitter4j.Trend;
+import feelthetweet.model.aylien.SentimentTool;
 import twitter4j.Trends;
 import twitter4j.Twitter;
-import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.api.TrendsResources;
 import twitter4j.conf.ConfigurationBuilder;
 
-public class Draft extends HttpServlet{
+public class Bot extends HttpServlet{
 
-	private static final Logger log = Logger.getLogger(Draft.class.getName());
+	private static final Logger log = Logger.getLogger(Bot.class.getName());
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -39,17 +31,24 @@ public class Draft extends HttpServlet{
 			TwitterFactory tf = new TwitterFactory(cb.build());
 			Twitter twitter = tf.getInstance();
 			
-			String tweet = "Analysis:\n";
+			String tweet = "Sentiment Analysis:\n";
 			
 			try {
 			Trends trends = twitter.getPlaceTrends(1);
+			int numOfTrends = 0;
 			for (int i = 0; i < trends.getTrends().length; i++) {
-				if (tweet.length() + trends.getTrends()[i].getName().length() + 5 < 140) {
-					tweet += trends.getTrends()[i].getName() + " - " + Sentiments.extractSentiment(trends.getTrends()[i].getName()) + "\n";
+				String trend = trends.getTrends()[i].getName();
+				
+				if (tweet.length() + trend.length() + 5 < 140 && numOfTrends < 4) {
+					String sentiment = SentimentTool.extractSentiment(trends.getTrends()[i].getName());
+					if (sentiment!="") {
+					tweet += trend + " - " + sentiment + "\n";
+					numOfTrends++;
+					}
 				} else {
 					break;
 				}
-				    System.out.println(trends.getTrends()[i].getName());
+				    System.out.println(trend);
 			}
 			
 			twitter.updateStatus(tweet);
@@ -59,10 +58,6 @@ public class Draft extends HttpServlet{
 				
 			}
 			
-		} else if(ip.equals("127.0.0.1")) {
-			System.out.println("Let's see what we've found...");
-			System.out.println(Sentiments.extractSentiment("#Loveislove"));
-		
 		} else {
 			log.info("Unknown IP is trying to access the bot: " + ip);
 		}

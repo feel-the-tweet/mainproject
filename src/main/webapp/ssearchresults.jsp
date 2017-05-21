@@ -7,49 +7,42 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<title>My Timeline</title>
+<title>Twitter Search Results</title>
 </head>
 <body>
-	<h1>Showing your timeline</h1>
 
+	<h1>Twitter Search Results</h1>
+	
 	<h2><a href="funcionalidades.jsp">FUNCIONALIDADES</a></h2>
 	<h2><a href="index.jsp">INDEX</a></h2>
 	
-	<div class="container">
+	<div class="searchresults">
 	
-		<p class="message">${message}</p>
+		<!-- <p class="message">${message}</p> -->
 				
 		<table id="tweets">
 			<tr>
 				<th>User</th>
 				<th>Text</th>
 				<th>Created at</th>
-				<th>Delete</th>
 				<th>Analyze Sentiment</th>
+				<th>View user</th>
 			</tr>
-			<c:forEach items="${requestScope.timeline}" var="status">
+			<c:forEach items="${requestScope.query}" var="status">
 				<tr>
 				<td><c:out value="${status.user.name}"/></td>
 				<td><c:out value="${status.text}"/></td>
 				<td><c:out value="${status.createdAt}"/></td>
-				<c:choose>
-    				<c:when test="${status.user.screenName == twitter.screenName}">
-       					 <td>
-				 		 <a href="statusDelete?id=${status.id}"><img src="./img/delete.png" width="30px"></a>
-						</td>
-    				</c:when>    
-    				<c:otherwise>
-        				<td></td>
-    				</c:otherwise>
-				</c:choose>
 				<td>
 					<a href="analyzeTweetSentiment?tweetanalyze=${status.text}"><img src="./img/analysis.png" width="30px"></a>
+				</td>
+				<td>
+				  <a href="https://twitter.com/${status.user.screenName}"><img src="./img/view.png" width="30px"></a>
 				</td>
 				</tr>
 			</c:forEach>			
 		</table>
-
-		<a href="/EditFile.jsp" class="button">Create new file</a>
+		
 	</div>
 
 </body>
