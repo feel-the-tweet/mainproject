@@ -249,4 +249,54 @@
 	</servlet-mapping>
 	
 	<!-- API Visual Interface Servlets -->
+	  <servlet>
+    <description></description>
+    <display-name>GetTextsServlet</display-name>
+    <servlet-name>GetTextsServlet</servlet-name>
+    <servlet-class>feelthetweet.api.controller.GetTextsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetTextsServlet</servlet-name>
+    <url-pattern>/GetTextsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetTextIdServlet</display-name>
+    <servlet-name>GetTextIdServlet</servlet-name>
+    <servlet-class>feelthetweet.api.controller.GetTextIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetTextIdServlet</servlet-name>
+    <url-pattern>/GetTextIdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PostTextServlet</display-name>
+    <servlet-name>PostTextServlet</servlet-name>
+    <servlet-class>feelthetweet.api.controller.PostTextServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostTextServlet</servlet-name>
+    <url-pattern>/PostTextServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteTextServlet</display-name>
+    <servlet-name>DeleteTextServlet</servlet-name>
+    <servlet-class>feelthetweet.api.controller.DeleteTextServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteTextServlet</servlet-name>
+    <url-pattern>/DeleteTextServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateTextServlet</display-name>
+    <servlet-name>UpdateTextServlet</servlet-name>
+    <servlet-class>feelthetweet.api.controller.UpdateTextServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateTextServlet</servlet-name>
+    <url-pattern>/UpdateTextServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
