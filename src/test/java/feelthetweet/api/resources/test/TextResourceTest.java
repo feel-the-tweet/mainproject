@@ -77,9 +77,9 @@ public class TextResourceTest {
 	}
 	
 	@Test
-	public void testUpdateSong() {
+	public void testUpdateText() {
 		
-		String textTitle = "Update song test title";
+		String textTitle = "Update text test title";
 		String textContent = "Update text test content";
 		
 		text1.setTitle(textTitle);
