@@ -31,10 +31,10 @@ public class TwitterTest {
 	@BeforeClass
 	public static void setUp() throws Exception {
 		
-		cb.setDebugEnabled(true).setOAuthConsumerKey("JmOly0SsPxhcsj0FPjqU7ucLW")
-		.setOAuthConsumerSecret("809X1X90UTyhoCvV6GTe0ZlYsYjGRVtKjxvIW4nvDxPUI5p56l")
-		.setOAuthAccessToken("838794388750942209-Zrj5wNI9vaTOYsl8m4Kp7ma8YCYBXeR")
-		.setOAuthAccessTokenSecret("BHJdWUjVbWMdyIxRvUXrMxpwXifk9yiXIEOjnMWgKZblY");
+		cb.setDebugEnabled(true).setOAuthConsumerKey("--")
+		.setOAuthConsumerSecret("--")
+		.setOAuthAccessToken("--")
+		.setOAuthAccessTokenSecret("--");
 		
 		twitter = new TwitterFactory(cb.build());
 		tw = twitter.getInstance();

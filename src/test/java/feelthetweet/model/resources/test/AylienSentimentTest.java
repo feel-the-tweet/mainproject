@@ -20,7 +20,7 @@ import com.aylien.textapi.responses.Sentiment;
 
 public class AylienSentimentTest {
 	
-	static TextAPIClient client = new TextAPIClient("e4c91a1c", "7af649d5a8502da656033172bf37ca7a");
+	static TextAPIClient client = new TextAPIClient("--", "--");
 	static Sentiment sentiment;
 	static String tweet,url; //text
 	

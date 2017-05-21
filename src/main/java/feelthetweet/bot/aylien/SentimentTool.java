@@ -24,7 +24,7 @@ public class SentimentTool {
 	
 	public static String extractSentiment(String hashtag) {
 		
-		TextAPIClient client = new TextAPIClient("dd20314c", "a95ea8247bda1952d9921914a75e483f");
+		TextAPIClient client = new TextAPIClient("--", "--");
 		
 		int positive = 0;
 		int negative = 0;
@@ -91,10 +91,10 @@ public class SentimentTool {
 	public static List<Status> searchTweets(String hashtag) {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 		cb.setDebugEnabled(true)
-		  .setOAuthConsumerKey("JmOly0SsPxhcsj0FPjqU7ucLW")
-		  .setOAuthConsumerSecret("809X1X90UTyhoCvV6GTe0ZlYsYjGRVtKjxvIW4nvDxPUI5p56l")
-		  .setOAuthAccessToken("838794388750942209-Zrj5wNI9vaTOYsl8m4Kp7ma8YCYBXeR")
-		  .setOAuthAccessTokenSecret("BHJdWUjVbWMdyIxRvUXrMxpwXifk9yiXIEOjnMWgKZblY");
+		  .setOAuthConsumerKey("--")
+		  .setOAuthConsumerSecret("--")
+		  .setOAuthAccessToken("---")
+		  .setOAuthAccessTokenSecret("--");
 		TwitterFactory tf = new TwitterFactory(cb.build());
 		Twitter twitter = tf.getInstance();
 		

@@ -10,8 +10,8 @@ import feelthetweet.api.model.Text;
 
 public class TextResource {
 
-	//private String uri = "http://feelthetweet.appspot.com/api/texts";
-	private String uri = "http://localhost:8090/api/texts";
+	private String uri = "http://feelthetweet.appspot.com/api/texts";
+	//private String uri = "http://localhost:8090/api/texts";
 
 	
 	public Collection<Text> getAllTexts() {

@@ -186,7 +186,8 @@
         <div class="mdl-logo">&copy; AISS 2016-2017</div>
         <ul class="mdl-mini-footer__link-list">
         <li><a href="/docs/index.html">API Documentation</a></li>
-        <li><a href="help.html">Help</a></li>
+        <li><a href="/indexapi.jsp">Our API</a></li>
+        
         <li><a href="about.html">About us</a></li>
         </ul>
         </div>

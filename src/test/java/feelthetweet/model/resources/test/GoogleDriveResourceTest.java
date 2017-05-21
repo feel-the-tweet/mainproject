@@ -20,7 +20,7 @@ public class GoogleDriveResourceTest {
 	/* Se necesita un access token para poder autentificar las llamadas, para obtenerlo debe acceder a la lista de archivos
 	 * y hacer click en "See drive token". Cópielo en la variable access_token.
 	 */
-	static String access_token = "ya29.GltQBH9KjwQTzuuEPz3hpJ9nsrkUNZIQzsWeKTq3aQ6QUR0TB-6VxJ5cwS9IpYNSajjS_hc3mZKGgDI-ao8ujBE8oJLXq1MCuRDl_XJER5vSE7BCFwevC-ZGGtnk";
+	static String access_token = "---";
 	static GoogleDriveResource gdr = new GoogleDriveResource(access_token);
 	
 	@BeforeClass

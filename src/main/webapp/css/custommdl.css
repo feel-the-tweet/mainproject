@@ -11,12 +11,15 @@
 
 .mycontent {
     text-align: center;
-
 }
 
 .trends {
     background-color: rgba(3,5,5,0.7);
     color: white;
+}
+
+.trend {
+	color: white;
 }
 
 .trends p {
