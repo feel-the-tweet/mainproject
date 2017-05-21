@@ -6,7 +6,7 @@ A sentiment analysis tool for Twitter. Proyecto para la asignatura AISS, grupo 3
 
 ## Link to the API
 
-[Feelthetweet API](http://feelthetweet.appspot.com/docs/Feelthetweet-2.0.0-swagger.yaml)
+[Feelthetweet API](http://feelthetweet.appspot.com/docs/index.html)
 
 ## Authors
 * Francisco de Paz Galán
