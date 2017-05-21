@@ -54,7 +54,19 @@
     </div>
     <div class="page-content">
     <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col trends"><div class="mycontent"><p>Here goes the trends<p></p></div></div>
+    <div class="mdl-cell mdl-cell--4-col trends">
+    	<div class="mycontent">
+    
+    	<h4>Showing the most popular trends in ${requestScope.place}</h4>
+    	<c:forEach items="${requestScope.trends}" var="trend">
+				<li>
+				<c:out value="${trend.name}"/>
+				</li>
+		</c:forEach>
+		
+		</div>
+	</div>
+
     <div class="mdl-cell mdl-cell--4-col"><div class="mycontent"><img src="img/FTTBirds.png" class="logo"><button onclick="location.href='signin';" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
     <i class="material-icons">perm_identity</i> Sign in with Twitter
     </button></div></div>
@@ -106,7 +118,19 @@
     </div>
     <div class="page-content">
     <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col trends"><div class="mycontent"><p>Here goes the trends<p></p></div></div>
+    <div class="mdl-cell mdl-cell--4-col trends">
+    	<div class="mycontent">
+    
+    	<h4>Showing the most popular trends in ${requestScope.place}</h4>
+    	<c:forEach items="${requestScope.trends}" var="trend">
+				<li>
+				<c:out value="${trend.name}"/>
+				</li>
+		</c:forEach>
+		
+		</div>
+	</div>
+		
     <div class="mdl-cell mdl-cell--4-col"><div class="mycontent"><form action="/post" method="post">
     <div class="mdl-textfield mdl-js-textfield tweetsend">
     <textarea class="mdl-textfield__input" id="sample5" type="text" rows= "3" name="text"></textarea>
